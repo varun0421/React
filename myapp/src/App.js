@@ -1,21 +1,21 @@
-import Navbar from './layouts/Navbar'
-import Footer from './layouts/Footer'
-import Content from './components/Content'
-import ListItem from './components/ListItem'
-
-
+import { useState } from 'react';
+import Products from './components/products'
+import Details from './components/details'
+import Navbar from './layout/Navbar'
+import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
 
+
   return (
-    <div className="App">
+    <div>
       <Navbar />
-      <Content />
-      <Footer />
-    </div >
+      <Routes>
+        <Route path='/' element={<Products />} />
+        <Route path='/product/:name' element={<Details />} />
+      </Routes>
+    </div>
   );
 }
-
-
 
 export default App;
